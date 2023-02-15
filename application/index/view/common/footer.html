@@ -1,0 +1,51 @@
+<!--contact-->
+<section id="contact">
+    <div class="lvjing">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 wow fadeInLeft animated">
+                    <h2>
+                        <span class="glyphicon glyphicon-send"></span>
+                        &nbsp;
+                        联系我们
+                    </h2>
+                    <p>
+                        <?php echo sysconfig('CMS_FOOT_PRO'); ?>
+                    </p>
+                    <address>
+                        <p>
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                            &nbsp;
+                            地址: <?php echo sysconfig('CMS_COMPANY_ADDRESS'); ?>
+                        </p>
+                        <p>
+                            <span class="glyphicon glyphicon-earphone"></span>
+                            &nbsp;
+                            電話: <?php echo sysconfig('CMS_COMPANY_CONTACT'); ?>
+                        </p>
+                        <p>
+                            <span class="glyphicon glyphicon-envelope"></span>
+                            &nbsp;
+                            Email: <a href="mailto:<?php echo sysconfig('CMS_COMPANY_EMAIL'); ?>" target="_blank"><?php echo sysconfig('CMS_COMPANY_EMAIL'); ?></a>
+                        </p>
+                    </address>
+                </div>
+                <div class="col-md-5 wow fadeInRight animated">
+                    <img align="right" src="<?php echo http_host(); ?>/images/contactus.png" class="img-responsive" alt="联系我们"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--contact-->
+<!--footer-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                &copy;<?php echo sysconfig('CMS_WEBNAME'); ?> 部分文章来源于网络，如果侵犯了您的权益，请<a href="<?php echo model('Page')->getPageDetailUrl(array('id'=>'contact')); ?>">联系我们</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer-->

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <title><?php echo sysconfig('CMS_SEOTITLE'); ?></title>
+    <meta name="keywords" content="PC Partner" />
+    <meta name="description" content="PC Partner" />
+    <meta http-equiv="content-language" content="zh-TW">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="<?php echo http_host(); ?>/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="<?php echo http_host(); ?>/css/bootstrap-xinqi.css"/>
+    <link rel="stylesheet" href="<?php echo http_host(); ?>/css/animate.css"/>
+    <link rel="stylesheet" href="<?php echo http_host(); ?>/css/style.css" media="all">
+    <script type="text/javascript" src="<?php echo http_host(); ?>/js/jquery.min.js"></script>
+    <style>
+        .jumbotron {
+            margin-bottom: 0px;
+        }
+        .content {
+            text-align: left;
+        }
+    </style>
+
+</head>
+<body>
+{include file="common/header"/} 
+<div class="box mt10  wow fadeInUp">
+    <div class="box mt10">
+    <?php if($list['data']){ ?><ul class="goodsul" id="goods_list">
+    <?php foreach($list['data'] as $k=>$v){ ?>
+    <li><a class="wrap" href="<?php echo model('Goods')->getGoodsDetailUrl(array('id'=>$v['id'])); ?>"><img src="<?php echo $v['litpic']; ?>" alt="<?php echo $v['title']; ?>">
+    <p class="title" style="min-height:20px;"><?php echo $v['title']; ?></p>
+    <!-- <p class="desc"><?php echo $v['description']; ?></p> -->
+    <!-- <div class="item-prices green"><div class="item-info">
+    <div class="dock"><div class="dock-price"><del class="orig-price">¥<?php echo $v['market_price']; ?></del></div><div class="prompt"><div class="sold-num"><em><?php echo $v['click']; ?></em> 人气</div></div></div>
+    </div></div> -->
+    </a></li>
+    <?php } ?><div class="cl"></div></ul><?php }else{ ?><div style="text-align:center;padding:20px;">暂无记录</div><?php } ?>
+
+    <?php if($list['data']){ ?><div class="bootstrap-front-pagination"><?php echo $page; ?><div class="cl"></div></div><?php } ?>
+
+    </div><!-- box end -->
+</div>    
+
+
+
+{include file="common/footer"/}
+<script src="<?php echo http_host(); ?>/js/jquery.min.js"></script>
+<script src="<?php echo http_host(); ?>/js/bootstrap.min.js"></script>
+<!--<script src="js/jquery.singlePageNav.min.js"></script>-->
+<script src="<?php echo http_host(); ?>/js/wow.min.js"></script>
+<script>
+$(function(){
+    /*导航跳转效果插件*/
+    /*$('.nav').singlePageNav({
+        offset:70
+    });*/
+    /*小屏幕导航点击关闭菜单*/
+    /*$('.navbar-collapse a').click(function(){
+        $('.navbar-collapse').collapse('hide');
+    });*/
+    new WOW().init();
+    
+    //鼠标滑过图片切换
+    /* var oldImageUrl = '';
+    $('.case-img').hover(function(){
+        oldImageUrl = $(this).attr('src');
+        $(this).attr('src', $(this).attr('data-src')).fadeIn();
+    },
+    function(){
+        $(this).attr('src', oldImageUrl).fadeIn();
+    }); */
+});
+</script> 
+</body>
+</html>
